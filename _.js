@@ -21,12 +21,27 @@ const _ = {
     words(string){
         return string.split(' ')
     },
-    pad = (string,length) =>{
-        if(string.length === length.length){
+    pad (string,length){
+        if(string.length >= length){
             return string;
-        } else if(string.length != length.length){
-            let paddingDiff = Math.floor(Math.abs(string.length - length.length))/2;
+        };
+            const startPadding = Math.floor(Math.abs(string.length - length))/2;
+            const endPadding = length - string.length - startPadding;
+            const paddedString =' '.repeat(startPadding) + string + ' '.repeat(endPadding)
+            return paddedString
+    },
+//    TODO: has(object,key){
+//         if(object === undefined){
+//             return false
+//         }
+//     }
+    invert:function(object){
+       let invertedObject = {};
+        for(let key in object){
+            const originalValue = object[key];
+             invertedObject = {originalValue : key}
         }
+        return invertedObject;
     }
 }
 
