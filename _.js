@@ -8,12 +8,24 @@ const _ = {
         if(endVal === undefined){
             endVal = startVal;
             startVal = 0;
-        } else if(startVal > endVal){
+        }
+         if(startVal > endVal){
             startValHolder = startVal;
             startVal = endVal;
             endVal = startValHolder;
-        } else if(number>= starVal && number <= endVal){
-            
+        } 
+        let isInRange = startVal <= number && number < endVal
+            return isInRange;
+        
+    },
+    words(string){
+        return string.split(' ')
+    },
+    pad = (string,length) =>{
+        if(string.length === length.length){
+            return string;
+        } else if(string.length != length.length){
+            let paddingDiff = Math.floor(Math.abs(string.length - length.length))/2;
         }
     }
 }
