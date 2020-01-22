@@ -66,6 +66,14 @@ const _ = {
         let dropNumber = arr.findIndex(cb);
         let droppedArray = this.drop(arr,dropNumber)
         return droppedArray;
+    },
+    chunk: function(array, size=1){
+        let arrayChunks = [];
+        for(let i=0; i<array.length; i+=size){
+           let arrayChunk = array.slice(i, i+size);
+           arrayChunks.push(arrayChunk);
+    }
+    return arrayChunks;
     }
 }
 
