@@ -52,6 +52,15 @@ const _ = {
             }
         }
         return undefined;
+    },
+    drop(arr,number){
+        const newArray = []
+        if(number === undefined ){
+            newArray.push(arr.slice(1))
+        } else{
+            newArray.push(arr.slice(number))
+        }
+        return newArray;
     }
 }
 
