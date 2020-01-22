@@ -54,13 +54,18 @@ const _ = {
         return undefined;
     },
     drop(arr,number){
-        const newArray = []
         if(number === undefined ){
-            newArray.push(arr.slice(1))
-        } else{
-            newArray.push(arr.slice(number))
+            number = 1;
         }
-        return newArray;
+           return arr.slice(number,arr.length) 
+    },
+    dropWhile(arr,predicate){
+        const cb = (element, index) => {
+            return !predicate(element,index,arr);
+        }
+        let dropNumber = arr.findIndex(cb);
+        let droppedArray = this.drop(arr,dropNumber)
+        return droppedArray;
     }
 }
 
