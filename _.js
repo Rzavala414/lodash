@@ -1,5 +1,10 @@
-
-
+const _ = {
+    clamp: function(number,lower,upper){
+        let clampedNum1 = Math.max(number,lower)
+        let clampedNum2 = Math.min(clampedNum1,upper)
+        return clampedNum2;
+    }
+}
 
 
 
